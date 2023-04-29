@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: mazeColumns
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 49824155126792723, guid: e6d468e8a93c7e3449fa5c70aee52484, type: 3}
+      propertyPath: disableCellSprite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1877773178482441359, guid: e6d468e8a93c7e3449fa5c70aee52484, type: 3}
       propertyPath: m_RootOrder
       value: 2

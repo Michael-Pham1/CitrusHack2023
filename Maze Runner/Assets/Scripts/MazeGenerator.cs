@@ -77,7 +77,14 @@ public class MazeGenerator : MonoBehaviour {
      */
     private void Start()
     {
+        StartCoroutine(time());
+    }
+    IEnumerator time(){
+        while (true)
+     {
         GenerateMaze(mazeRows, mazeColumns);
+        yield return new WaitForSeconds(10);
+     }
     }
 
     private void GenerateMaze(int rows, int columns)
