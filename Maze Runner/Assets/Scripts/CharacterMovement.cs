@@ -17,14 +17,8 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.LeftArrow)){
-        //     Vector2 position = this.transform.position;
-        //     position.x--;
-        //     this.transform.position = position;
-        // }
         xDir = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(xDir * 7f, rb.velocity.y);
         yDir = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(rb.velocity.x, yDir * 7f);
+        rb.velocity = new Vector2(xDir * 7f, yDir * 7f);
     }
 }
