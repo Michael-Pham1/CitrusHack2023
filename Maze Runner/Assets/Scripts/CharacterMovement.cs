@@ -33,6 +33,9 @@ public class CharacterMovement : MonoBehaviour
         xDir = Input.GetAxisRaw("Horizontal");
         yDir = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(xDir * 7f, yDir * 7f);
+        if(Input.GetKey(KeyCode.Space)){
+            Application.Quit();
+        }
         
     }
 

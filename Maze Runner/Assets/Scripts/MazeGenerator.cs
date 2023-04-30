@@ -58,6 +58,8 @@ public class MazeGenerator : MonoBehaviour {
 
     private GameObject mazeParent;
     public GameObject endCell;
+    public Sprite newSprite;
+    public Material newMaterial;
     #endregion
 
     /* This Start run is an example, you can delete this when 
@@ -164,13 +166,17 @@ public class MazeGenerator : MonoBehaviour {
 
         // Get edge cell randomly from list.
         Cell newCell = edgeCells[Random.Range(0, edgeCells.Count)];
-        newCell.cellObject.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        endCell = newCell.cellObject;
+        endCell.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        endCell.GetComponent<SpriteRenderer>().sprite = newSprite;
+        endCell.GetComponent<SpriteRenderer>().material = newMaterial;
+        endCell.GetComponent<SpriteRenderer>().enabled = true;
+
         // Remove appropriate wall for chosen edge cell.
         if (newCell.gridPos.x == 0) RemoveWall(newCell.cScript, 1);
         else if (newCell.gridPos.x == mazeColumns) RemoveWall(newCell.cScript, 2);
         else if (newCell.gridPos.y == mazeRows) RemoveWall(newCell.cScript, 3);
         else RemoveWall(newCell.cScript, 4);
-        endCell = newCell.cellObject;
         Debug.Log("Maze generation finished.");
     }
 
