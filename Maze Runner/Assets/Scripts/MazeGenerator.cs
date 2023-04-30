@@ -57,6 +57,7 @@ public class MazeGenerator : MonoBehaviour {
     private float cellSize;
 
     private GameObject mazeParent;
+    public GameObject endCell;
     #endregion
 
     /* This Start run is an example, you can delete this when 
@@ -73,7 +74,7 @@ public class MazeGenerator : MonoBehaviour {
         while (true)
      {
         GenerateMaze(mazeRows, mazeColumns);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
      }
     }
 
@@ -169,7 +170,7 @@ public class MazeGenerator : MonoBehaviour {
         else if (newCell.gridPos.x == mazeColumns) RemoveWall(newCell.cScript, 2);
         else if (newCell.gridPos.y == mazeRows) RemoveWall(newCell.cScript, 3);
         else RemoveWall(newCell.cScript, 4);
-
+        endCell = newCell.cellObject;
         Debug.Log("Maze generation finished.");
     }
 
