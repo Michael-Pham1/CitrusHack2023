@@ -6,7 +6,7 @@ using TMPro;
 public class Time : MonoBehaviour
 {
     public TextMeshProUGUI display;
-    private int time;
+    int time;
     
     void Start()
     {
@@ -20,9 +20,10 @@ public class Time : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             time++;
+            display.text = "Time: " + time.ToString();
         }
     }
-    void Update(){
-        display.text = "Time: " + time.ToString();
-    }
+    // void Update(){
+        
+    // }
 }

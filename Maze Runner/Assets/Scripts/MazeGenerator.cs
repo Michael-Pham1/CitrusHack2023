@@ -163,7 +163,7 @@ public class MazeGenerator : MonoBehaviour {
 
         // Get edge cell randomly from list.
         Cell newCell = edgeCells[Random.Range(0, edgeCells.Count)];
-
+        newCell.cellObject.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
         // Remove appropriate wall for chosen edge cell.
         if (newCell.gridPos.x == 0) RemoveWall(newCell.cScript, 1);
         else if (newCell.gridPos.x == mazeColumns) RemoveWall(newCell.cScript, 2);
